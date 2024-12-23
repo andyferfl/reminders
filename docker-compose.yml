@@ -1,0 +1,83 @@
+version: '3.9'
+
+services:
+
+  pgdb:
+    image: postgres
+    security_opt:
+      - no-new-privileges:true
+    container_name: pgdb
+    environment:
+      POSTGRES_DB: 'taskdb'
+      POSTGRES_USER: 'test'
+      POSTGRES_PASSWORD: 'netlab'
+    restart: on-failure:5
+    networks:
+      - net
+    expose:
+      - 5432
+    pids_limit: 10
+    cpus: 0.5
+    mem_limit: 512M
+    volumes:
+      - ./data/db:/var/lib/postresql/data/
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -d taskdb -U test"]
+
+  django:
+    build: 
+      context: ./api
+      dockerfile: Dockerfile
+    container_name: django
+    security_opt:
+      - no-new-privileges:true
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - ./api:/user/src/app/backend
+    networks:
+      - net
+    ports:
+      - '127.0.0.1:8000:8000'
+    expose:
+      - 8000
+    pids_limit: 10
+    cpus: 0.5
+    mem_limit: 512M
+    user: test
+    depends_on:
+      pgdb:
+        condition: service_started
+    restart: on-failure:5
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/admin"]
+
+  react:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    networks:
+      - net
+    ports: 
+      - '127.0.0.1:3000:3000'
+    expose:
+      - 3000
+    cpus: 1
+    mem_limit: 1024M
+    security_opt:
+      - no-new-privileges:true
+    volumes: 
+      - ./frontend:/user/src/app/frontend
+    user: test
+    depends_on:
+      django:
+        condition: service_healthy
+    restart: on-failure:5
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000"]
+
+networks:
+  net:
+    driver: bridge
+    external: false
+
+
