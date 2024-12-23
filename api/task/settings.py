@@ -161,8 +161,8 @@ REST_FRAMEWORK = {
 CORS_ALLOWED_ORIGINS = [
     'http://127.0.0.1:3000',
     'http://localhost:3000',
-    'https://next-cheaply-tortoise.ngrok-free.app/',
-    'http://next-cheaply-tortoise.ngrok-free.app/',
+    'https://next-cheaply-tortoise.ngrok-free.app',
+    'http://next-cheaply-tortoise.ngrok-free.app',
 ]
 
 SIMPLE_JWT = {
