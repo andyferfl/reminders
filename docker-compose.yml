@@ -75,6 +75,7 @@ services:
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:3000"]
 
+
 networks:
   net:
     driver: bridge
