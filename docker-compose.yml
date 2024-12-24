@@ -48,8 +48,6 @@ services:
       pgdb:
         condition: service_started
     restart: on-failure:5
-    healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:8000/admin"]
 
   react:
     build:
@@ -72,8 +70,6 @@ services:
       django:
         condition: service_healthy
     restart: on-failure:5
-    healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:3000"]
 
 
 networks:
