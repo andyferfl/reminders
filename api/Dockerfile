@@ -9,15 +9,15 @@ WORKDIR /usr/src/app/backend
 
 COPY requirements.txt ./
 
-RUN  apt-get update && \
- apt-get install -y postgresql postgresql-contrib && \
- python -m pip install --upgrade pip && \
- python -m pip install -r requirements.txt --no-cache-dir
+RUN  sudo apt-get update && \
+ sudo apt-get install -y postgresql postgresql-contrib && \
+ sudo python -m pip install --upgrade pip && \
+ sudo python -m pip install -r requirements.txt --no-cache-dir
 
 COPY . ./
 
-RUN chown -R test:test /usr/src/app/backend && \
- chmod -R 701 /usr/src/app/backend 
+RUN sudo chown -R test:test /usr/src/app/backend && \
+ sudo chmod -R 701 /usr/src/app/backend 
 
 USER test
 
