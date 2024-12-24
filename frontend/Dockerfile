@@ -8,10 +8,9 @@ COPY package*.json ./
 
 RUN npm install
 
-COPY . ./
+COPY --chown=test:test . ./
 
-RUN chown -R test:test /usr/src/app/frontend && \
- chmod -R 701 /usr/src/app/frontend
+RUN chmod -R 701 /usr/src/app/frontend
 
 USER test
 
