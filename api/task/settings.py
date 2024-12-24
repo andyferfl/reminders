@@ -163,6 +163,8 @@ CORS_ALLOWED_ORIGINS = [
     'http://localhost:3000',
     'https://next-cheaply-tortoise.ngrok-free.app',
     'http://next-cheaply-tortoise.ngrok-free.app',
+    'http://127.0.0.1:4040',
+    'http://127.0.0.1:4040',
 ]
 
 SIMPLE_JWT = {
