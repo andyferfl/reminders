@@ -25,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-=e%hj@1wqfd*((st+khclg%l#0a6&4n+p&_1yr87c#p-^tv_u6'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -158,14 +158,13 @@ REST_FRAMEWORK = {
 
 }
 
-CORS_ALLOWED_ORIGINS = [
+CORS_ORIGIN_ALLOW_ALL = DEBUG
+'''CORS_ALLOWED_ORIGINS = [
     'http://127.0.0.1:3000',
     'http://localhost:3000',
     'https://next-cheaply-tortoise.ngrok-free.app',
     'http://next-cheaply-tortoise.ngrok-free.app',
-    'http://127.0.0.1:4040',
-    'http://127.0.0.1:4040',
-]
+]'''
 
 SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFETIME': timedelta(minutes=30),

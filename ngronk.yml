@@ -1,0 +1,19 @@
+# Version of the ngrok Agent Configuration file. Required.
+version: 3
+
+# Agent Configuration. Required.
+agent:
+  authtoken: 2qcRE6Pv759UFrfoXTlw96eUvGK_2n71C7vkeVye4u2E1KohW
+
+# Endpoint Definitions
+endpoints:
+  # Endpoint with no endpoint url defined to get a randomly assigned ngrok address.
+  - name: front
+    url: http://  # uncomment this line if you want your endpoint to be HTTP, by default it's HTTPS
+    upstream:
+      url: 3000
+
+  - name: back
+    url: http://next-cheaply-tortoise.ngrok-free.app 
+    upstream:
+      url: 8080
