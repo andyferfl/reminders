@@ -10,8 +10,8 @@ RUN npm install
 
 COPY . ./
 
-RUN sudo chown -R test:test /usr/src/app/frontend && \
- sudo chmod -R 701 /usr/src/app/frontend
+RUN chown -R test:test /usr/src/app/frontend && \
+ chmod -R 701 /usr/src/app/frontend
 
 USER test
 
