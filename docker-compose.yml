@@ -83,8 +83,8 @@ services:
     volumes:
       - ./nginx.conf:/etc/nginx/nginx.conf
       - ./ssl:/etc/nginx/ssl
-      - /etc/letsencrypt/live/your-app.duckdns.org/fullchain.pem:/etc/nginx/ssl/fullchain.pem
-      - /etc/letsencrypt/live/your-app.duckdns.org/privkey.pem:/etc/nginx/ssl/privkey.pem
+      - /etc/letsencrypt/live/andyferfl.duckdns.org/fullchain.pem:/etc/nginx/ssl/fullchain.pem
+      - /etc/letsencrypt/live/andyferfl.duckdns.org/privkey.pem:/etc/nginx/ssl/privkey.pem
     depends_on:
       - django
       - react
