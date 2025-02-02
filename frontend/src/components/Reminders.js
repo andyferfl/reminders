@@ -33,7 +33,7 @@ class Reminders extends React.Component {
         try{
             const {authTokens, logoutUser} =  this.context;
             let token = 'Bearer ' + String(authTokens.access);        
-            await fetch('http://127.0.0.1:8000/api/categories/',{
+            await fetch('https://andyferfl.duckdns.org/api/categories/',{
                 method:'GET',
                 headers:{
                     'Content-Type':'application/json',
@@ -81,7 +81,7 @@ class Reminders extends React.Component {
                 extra += '&date=' + date; 
             }
         
-            let url = 'http://127.0.0.1:8000/api/'+extra;
+            let url = 'https://andyferfl.duckdns.org/api/'+extra;
 
             await fetch(url,{
                 method:'GET',

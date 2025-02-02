@@ -36,7 +36,7 @@ class Photos extends React.Component {
         const {authTokens, logoutUser} =  this.context;
         const {limit, offset, items} = this.state;
         let token = 'Bearer ' + String(authTokens.access);
-        let url =  'http://127.0.0.1:8000/api/photos/?limit='+limit+'&offset='+offset;
+        let url =  'https://andyferfl.duckdns.org/api/photos/?limit='+limit+'&offset='+offset;
         fetch(url,{
                 method:'GET',
                 headers:{
@@ -73,7 +73,7 @@ class Photos extends React.Component {
             let {authTokens, logoutUser} = this.context;
             let token = 'Bearer ' + String(authTokens.access);
     
-            let response = await fetch('http://127.0.0.1:8000/api/photos/', {
+            let response = await fetch('https://andyferfl.duckdns.org/api/photos/', {
                 method:'POST',
                 headers:{
                     'Authorization':token,

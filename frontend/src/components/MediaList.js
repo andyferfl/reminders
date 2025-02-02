@@ -16,7 +16,7 @@ class MediaList extends React.Component {
     }
 
     componentDidMount() {
-        fetch('http://127.0.0.1:8000/api/media/')
+        fetch('https://andyferfl.duckdns.org/api/media/')
             .then((res) => { 
                 if (!res.ok)
                 {

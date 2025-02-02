@@ -17,7 +17,7 @@ function AuthProvider ({children}) {
 
     let loginUser = async (user) => {
     
-        let response = await fetch('http://127.0.0.1:8000/api/token/', {
+        let response = await fetch('https://andyferfl.duckdns.org/api/token/', {
             method:'POST',
             headers:{
                 'Content-Type':'application/json'
@@ -46,7 +46,7 @@ function AuthProvider ({children}) {
 
     let updateToken = async ()=>{
         console.log('oops')
-        let response = await fetch('http://127.0.0.1:8000/api/token/refresh/', {
+        let response = await fetch('https://andyferfl.duckdns.org/api/token/refresh/', {
             method:'POST',
             headers:{
                 'Content-Type':'application/json'

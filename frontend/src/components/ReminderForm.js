@@ -22,7 +22,7 @@ class ReminderForm extends React.Component {
         let token = 'Bearer ' + String(authTokens.access);
 
 
-       fetch('http://127.0.0.1:8000/api/categories/',{
+       fetch('https://andyferfl.duckdns.org/api/categories/',{
             method:'GET',
             headers:{
                 'Content-Type':'application/json',
@@ -46,7 +46,7 @@ class ReminderForm extends React.Component {
         let {authTokens, logoutUser} = this.context;
         let token = 'Bearer ' + String(authTokens.access);
 
-        let response = await fetch('http://127.0.0.1:8000/api/', {
+        let response = await fetch('https://andyferfl.duckdns.org/api/', {
             method:'POST',
             headers:{
                 'Content-Type':'application/json',
