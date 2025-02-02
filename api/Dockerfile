@@ -23,7 +23,7 @@ USER test
 
 EXPOSE 8000
 
-HEALTHCHECK CMD curl --fail http://localhost:8000/admin || exit 1  
+#HEALTHCHECK CMD curl --fail http://localhost:8000/admin || exit 1  
 
 ENTRYPOINT [ "/usr/src/app/backend/docker-entrypoint.sh" ]
 
