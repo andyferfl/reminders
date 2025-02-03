@@ -165,6 +165,12 @@ CORS_ALLOWED_ORIGINS = [
     'https://andyferfl.duckdns.org'
 ]
 
+CSRF_TRUSTED_ORIGINS = [
+    'http://127.0.0.1:3000',
+    'http://localhost:3000',
+    'https://andyferfl.duckdns.org'
+]
+
 SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFETIME': timedelta(minutes=30),
     'REFRESH_TOKEN_LIFETIME': timedelta(days=30),
