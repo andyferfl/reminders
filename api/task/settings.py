@@ -130,9 +130,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = 'static/'
-
+STATIC_ROOT = '/app/static/'
 MEDIA_URL = 'media/'
-
+MEDIA_ROOT = '/app/media/'
 STATICFILES_DIRS = [
     BASE_DIR / 'static',
 ]
@@ -158,6 +158,12 @@ REST_FRAMEWORK = {
     ],
 
 }
+
+SESSION_COOKIE_SECURE = True
+SESSION_COOKIE_SAMESITE = 'None'
+CSRF_COOKIE_SECURE = True
+CSRF_COOKIE_SAMESITE = 'None'
+CORS_ALLOW_CREDENTIALS = True
 
 CORS_ALLOWED_ORIGINS = [
     'http://127.0.0.1:3000',
