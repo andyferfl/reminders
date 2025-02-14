@@ -1,5 +1,6 @@
 import React from 'react'
 import AuthContext from '../context/AuthContext'
+import ReminderForm from '../components/ReminderForm'
 import ReminderFilters from './ReminderFilters';
 
 
@@ -215,6 +216,8 @@ class Reminders extends React.Component {
 
         return (
             <div>
+                <ReminderForm updateReminders={this.resetHandler} />
+                <hr class="w-50 mx-auto my-5"/>
                 <ReminderFilters categories={categories} filterHandler={this.filterHandler} searchHandler={this.searchHandler} getReminders={this.getReminders} renderReminders={this.renderReminders} resetHandler={this.resetHandler}/>
                 { !loading? this.renderReminders() : <div className='h-100 bg-secondary'><h1>Please wait...</h1></div>}        
                 

@@ -15,6 +15,10 @@ class ReminderForm extends React.Component {
         }
 
         this.submitHandler = this.submitHandler.bind(this);
+
+        this.updateReminders = () => {
+            this.props.updateReminders()
+        }
     }
 
     componentDidMount() {
@@ -61,6 +65,8 @@ class ReminderForm extends React.Component {
             }
             console.log(response.statusText)
         }   
+
+        this.updateReminders()
 
         alert('Reminder added succesfully!')
 
