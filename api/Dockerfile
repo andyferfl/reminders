@@ -18,7 +18,7 @@ COPY . ./
 
 RUN chown -R test:test /usr/src/app/backend && \
  chmod -R 777 /usr/src/app/backend && \
- chmod a+x /usr/src/app/backend/docker-entrypoint.sh
+ chmod 777 /usr/src/app/backend/docker-entrypoint.sh
 
 USER test
 
