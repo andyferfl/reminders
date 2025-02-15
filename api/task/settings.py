@@ -132,12 +132,12 @@ USE_TZ = True
 STATIC_URL = 'static/'
 STATIC_ROOT = '/app/static/'
 MEDIA_URL = 'media/'
-MEDIA_ROOT = '/app/media/'
+#MEDIA_ROOT = '/app/media/'
 STATICFILES_DIRS = [
     BASE_DIR / 'static',
 ]
 
-#MEDIA_ROOT = BASE_DIR / 'static/media'
+MEDIA_ROOT = BASE_DIR / 'static/media'
 
 
 
