@@ -34,7 +34,7 @@ services:
     command: python manage.py runserver 0.0.0.0:8000
     volumes:
       - ./api:/user/src/app/backend
-      - media_volume:/usr/src/app/backend/static/media
+      - media_volume:/user/src/app/backend/static/media
     networks:
       - net
     ports:
