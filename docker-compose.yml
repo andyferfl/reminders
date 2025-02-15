@@ -33,7 +33,6 @@ services:
       - no-new-privileges:true
     command: python manage.py runserver 0.0.0.0:8000
     volumes:
-      - ./api:/usr/src/app/backend
       - media_volume:/usr/src/app/backend/static/media
     networks:
       - net
