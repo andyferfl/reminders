@@ -15,6 +15,30 @@ function AuthProvider ({children}) {
 
     const navigate = useNavigate()
 
+    let signupUser = async (user) => {
+    
+        if (user.password !== user.password2){
+            alert('Passwords don\'t match')
+            return
+        }
+
+        let response = await fetch('https://andyferfl.duckdns.org/api/auth/register/', {
+            method:'POST',
+            headers:{
+                'Content-Type':'application/json'
+            },
+            body:JSON.stringify({"username":user.username, "full_name":user.full_name, "password":user.password, "password2":user.password2})
+        })
+    
+        let data = await response.json()
+
+        if(response.ok){
+            navigate('/login')
+        }else{
+            alert('Something went wrong! Try another username')
+        }
+    }
+
     let loginUser = async (user) => {
     
         let response = await fetch('https://andyferfl.duckdns.org/api/token/', {
@@ -74,6 +98,7 @@ function AuthProvider ({children}) {
         authTokens:authTokens,
         loginUser:loginUser,
         logoutUser:logoutUser,
+        signupUser:signupUser,
     }
 
     useEffect(()=>{

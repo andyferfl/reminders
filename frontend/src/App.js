@@ -4,6 +4,7 @@ import ProtectedRoute from './utils/ProtectedRoute';
 import './App.css'
 import HomePage from './pages/HomePage';
 import LoginPage from './pages/LoginPage';
+import SignupPage from './pages/SignupPage';
 import { AuthProvider } from './context/AuthContext';
 import Header from './components/Header';
 import Footer from './components/Footer'
@@ -21,6 +22,7 @@ function App() {
               </ProtectedRoute>
             }  exact/>
             <Route path="/login" element={<LoginPage/>} />
+            <Route path="/signup" element={<SignupPage/>} />
           </Routes>
           <Footer/>
         </AuthProvider>
