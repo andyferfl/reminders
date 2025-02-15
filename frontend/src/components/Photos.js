@@ -88,7 +88,8 @@ class Photos extends React.Component {
                 console.log(response.statusText)
             }  
             else {
-                alert('Photo added succesfully!')
+                //alert('Photo added succesfully!')
+                this.loadPhotos()
             } 
         } catch (error) {
             console.log(error)
@@ -99,13 +100,12 @@ class Photos extends React.Component {
         e.preventDefault();
         let file = e.target.photo.files[0];
         if (!file){
-            alert('Select a file to upload');
+            //alert('Select a file to upload');
             return;
         }
 
        this.uploadPhoto(file);
        e.target.reset();
-       this.loadPhotos()
     }
 
     componentDidMount() {
