@@ -34,6 +34,7 @@ services:
     command: python manage.py runserver 0.0.0.0:8000
     volumes:
       - ./api:/user/src/app/backend
+      - ./api/reminders/static/media:/app/media/
     networks:
       - net
     ports:
@@ -84,6 +85,7 @@ services:
       - ./nginx.conf:/etc/nginx/nginx.conf
       - ./ssl:/etc/nginx/ssl
       - /etc/letsencrypt:/etc/letsencrypt:ro
+      - ./api/reminders/static/media:/app/media
     depends_on:
       - django
       - react
