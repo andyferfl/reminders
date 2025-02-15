@@ -14,7 +14,7 @@ RUN  apt-get update && \
  python -m pip install --upgrade pip && \
  python -m pip install -r requirements.txt --no-cache-dir
 
-COPY . ./
+COPY --chmod=755 . ./
 
 RUN chown -R test:test /usr/src/app/backend && \
  chmod -R 755 /usr/src/app/backend && \
