@@ -17,8 +17,8 @@ RUN  apt-get update && \
 COPY . ./
 
 RUN chown -R test:test /usr/src/app/backend && \
- chmod -R 777 /usr/src/app/backend && \
- chmod 777 /usr/src/app/backend/docker-entrypoint.sh
+ chmod -R 755 /usr/src/app/backend && \
+ chmod 755 /usr/src/app/backend/docker-entrypoint.sh
 
 USER test
 
