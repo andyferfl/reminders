@@ -105,6 +105,7 @@ class Photos extends React.Component {
 
        this.uploadPhoto(file);
        e.target.reset();
+       this.loadPhotos()
     }
 
     componentDidMount() {
