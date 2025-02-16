@@ -26,7 +26,7 @@ function LoginPage (){
         <form onSubmit={submitHandler} className='mb-3'>
             <input type='text' name='username' className='form-control ml-3 mt-5 mb-3' placeholder='username' />
             <input type='password' name='password' className='form-control ml-3 mb-3' placeholder='password' />
-            <button type='submit' className='btn btn-primary mb-3 ml-3'>Log in</button>
+            <button type='submit' className='btn btn-primary mb-3 ml-3 mr-3'>Log in</button>
             <Link to='/signup' className='btn btn-primary mb-3 ml-3'>Sign up</Link>
         </form>
     </div>

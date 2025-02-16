@@ -5,6 +5,12 @@ function SignupPage()
 {
   let {signupUser} = useContext(AuthContext)
 
+  const [errors, setErrors] = useState({
+    username: [],
+    password: [],
+    non_field_errors: []
+  });
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -21,24 +27,46 @@ function SignupPage()
       full_name:e.target.full_name.value
     }
     
-    signupUser(user);
+    const response = signupUser(user);
+
+    if (response.ok) {
+      return
+    }
+
+    setErrors({
+      username: err.response.data.username || [],
+      password: err.response.data.password || [],
+      non_field_errors: err.response.data.non_field_errors || []
+    });
+
+
   };
 
   return (
     <div className='w-100 h-100 d-flex justify-content-around align-items-center' style={{background: "rgb(64,224,208)"}}>
         <form onSubmit={handleSubmit} className='mb-3'>
+          <div>
             <input 
               type='text' 
               name='username' 
               className='form-control ml-3 mt-5 mb-3' 
               placeholder='username' 
             />
+            {errors.username.map((error, index) => (
+              <p key={`username-error-${index}`} className="error">
+              {error}
+              </p>
+            ))}
+          </div>
+          <div>
             <input 
               type='text' 
               name='full_name' 
-              className='form-control ml-3 mt-5 mb-3' 
+              className='form-control ml-3 mb-3' 
               placeholder='full name' 
             />
+          </div>
+          <div>
             <input 
               type='password' 
               name='password' 
@@ -51,6 +79,18 @@ function SignupPage()
               className='form-control ml-3 mb-3' 
               placeholder='Confirm password' 
             />
+            {errors.password.map((error, index) => (
+              <p key={`password-error-${index}`} className="error">
+                {error}
+              </p>
+            ))}
+          </div>
+          
+            {errors.non_field_errors.map((error, index) => (
+              <p key={`general-error-${index}`} className="error">
+                {error}
+              </p>
+            ))}
             <button type='submit' className='btn btn-primary mb-3 ml-3'>Sign up</button>
         </form>
     </div>

@@ -35,8 +35,9 @@ function AuthProvider ({children}) {
         if(response.ok){
             navigate('/login')
         }else{
-            alert('Something went wrong! Try another username')
+            return response
         }
+        return
     }
 
     let loginUser = async (user) => {
