@@ -91,9 +91,13 @@ class Reminders extends React.Component {
                     'Authorization':token,
                 },
             }).then((res) => { 
-                if (res.statusText === 'Unauthorized' || !res.ok)
+                if (res.statusText === 'Unauthorized')
                 {
                     logoutUser();
+                }
+                if (!res.ok)
+                {
+                    console.log('Reminders loading error: ' + res.statusText);
                 }
                 return res.json();})
             .then((json) => {
