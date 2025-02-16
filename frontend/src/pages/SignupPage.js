@@ -33,6 +33,14 @@ function SignupPage()
       return
     }
 
+    console.log(response.data);
+    console.log(response.status);
+    console.log(response.statusText);
+    console.log(response.headers);
+    console.log(response.config);
+    console.log(response.error);
+    console.log(response.password);
+    
     setErrors({
       username: response.username || [],
       password: response.password || [],
