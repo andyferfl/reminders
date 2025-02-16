@@ -68,8 +68,6 @@ class ReminderForm extends React.Component {
 
         this.updateReminders()
 
-        alert('Reminder added succesfully!')
-
     }
 
     submitHandler (e, checked) {
