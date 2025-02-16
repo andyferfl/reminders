@@ -39,7 +39,7 @@ function SignupPage()
     console.log(response.headers);
     console.log(response.config);
     console.log(response.error);
-    console.log(response.password);
+    console.log(response);
     
     setErrors({
       username: response.username || [],
