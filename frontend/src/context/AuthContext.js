@@ -35,7 +35,7 @@ function AuthProvider ({children}) {
         if(response.ok){
             navigate('/login')
         }else{
-            return response
+            return data
         }
         return
     }
