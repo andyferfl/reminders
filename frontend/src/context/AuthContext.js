@@ -104,7 +104,7 @@ function AuthProvider ({children}) {
 
     useEffect(()=>{
 
-        if(loading && authTokens){
+        if(loading){
             updateToken();
         }
 
