@@ -27,18 +27,12 @@ function SignupPage()
       full_name:e.target.full_name.value
     }
     
-    const response = signupUser(user);
+    const response = await signupUser(user);
 
     if (response.ok) {
       return
     }
-
-    console.log(response.data);
-    console.log(response.status);
-    console.log(response.statusText);
-    console.log(response.headers);
-    console.log(response.config);
-    console.log(response.error);
+    
     console.log(response);
     
     setErrors({
