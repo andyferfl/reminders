@@ -1,4 +1,4 @@
-import React, {useContext} from 'react'
+import React, {useContext, useState} from 'react'
 import AuthContext from '../context/AuthContext'
 
 function SignupPage()
@@ -85,7 +85,7 @@ function SignupPage()
               </p>
             ))}
           </div>
-          
+
             {errors.non_field_errors.map((error, index) => (
               <p key={`general-error-${index}`} className="error">
                 {error}
