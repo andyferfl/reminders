@@ -34,9 +34,9 @@ function SignupPage()
     }
 
     setErrors({
-      username: response.data.username || [],
-      password: response.data.password || [],
-      non_field_errors: response.data.non_field_errors || []
+      username: response.username || [],
+      password: response.password || [],
+      non_field_errors: response.non_field_errors || []
     });
 
 
